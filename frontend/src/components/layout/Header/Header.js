@@ -21,9 +21,9 @@ const Header = () => {
           <div className="hero">
             <nav>
               <div className="hamburger-menu">
-                <a href="#" onClick={() => setShowHamburger(!showHamburger)}>
+                <p onClick={() => setShowHamburger(!showHamburger)}>
                   <GiHamburgerMenu />
-                </a>
+                </p>
               </div>
               <Link to="/">
                 <img src={logo} className="logo-icon" alt="logo" />
@@ -65,12 +65,11 @@ const Header = () => {
           <div className="hero-mobile">
             {showHamburger ? (
               <div className="hamburger-list">
-                <a
-                  href="#"
+                <p
                   onClick={() => setShowHamburger(!showHamburger)}
                   className="close-icon">
                   <CloseIcon />
-                </a>
+                </p>
                 <div className="mobile-menu">
                   <li>
                     <Link
@@ -107,12 +106,12 @@ const Header = () => {
             )}
             <nav className="nav-mobile">
               <div className="hamburger-menu">
-                <a href="#" onClick={() => setShowHamburger(!showHamburger)}>
+                <p onClick={() => setShowHamburger(!showHamburger)}>
                   <GiHamburgerMenu className="hamburger-icon" />
-                </a>
+                </p>
               </div>
               <Link to="/">
-              <img src={logo} className="logo-icon" alt="logo" />
+                <img src={logo} className="logo-icon" alt="logo" />
                 <h2 className="logo">Ecommerce</h2>
               </Link>
               {isAuthenticated ? (

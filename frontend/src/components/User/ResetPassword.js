@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import "./UpdateProflie.css";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { resetPassword } from "../../actions/userAction";
@@ -37,7 +37,7 @@ const ResetPassword = () => {
       alert("Password Updated Successfully");
       navigate("/login");
     }
-  }, [dispatch, loading, error, navigate]);
+  }, [dispatch, loading, error, navigate,success]);
 
   return (
     <Fragment>

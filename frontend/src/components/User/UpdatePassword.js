@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import "./UpdateProflie.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loader from "../layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePassword } from "../../actions/userAction";

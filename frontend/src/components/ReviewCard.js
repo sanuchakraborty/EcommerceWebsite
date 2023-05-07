@@ -1,4 +1,4 @@
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
 import React, { Fragment } from "react";
 // import profilePng from "../../images/Profile.png";
 import { Rating } from "@mui/material";

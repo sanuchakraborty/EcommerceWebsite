@@ -124,6 +124,7 @@ a:hover{
     }
     .hamburger-icon{
         scale:1.5;
+        color: white;
     }
     .hero-mobile{
     display: block;

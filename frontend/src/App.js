@@ -8,7 +8,7 @@ import ProductDetails from "./components/Product/ProductDetails.js";
 import Products from "./components/Product/Products.js";
 import LogIn from "./components/User/LogIn";
 import Register from "./components/User/Register";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import store from "./Store.js";
 import { isAuth } from "./actions/userAction";
 import UserProfile from "./components/User/UserProflie.js";
@@ -35,18 +35,17 @@ import AllReviewsOfProduct from "./components/Admin/AllReviewsOfProduct.js";
 import { useSelector } from "react-redux";
 import ProtectedRoute from "./components/Route/ProtectedRoute.js";
 import AdminProtectedRoute from "./components/Route/AdminProtectedRoute.js";
-import axios from "axios";
 
 function App() {
   const { user } = useSelector((state) => state.user);
 
-  const [stripeApiKey, setStripeApiKey] = useState("");
+  // const [stripeApiKey, setStripeApiKey] = useState("");
 
-  async function getStripeApiKey() {
-    const { data } = await axios.get("/api/v1/stripeapikey");
-    setStripeApiKey(data.stripeApiKey);
-    console.log("stripeApiKey", stripeApiKey);
-  }
+  // async function getStripeApiKey() {
+  //   const { data } = await axios.get("/api/v1/stripeapikey");
+  //   setStripeApiKey(data.stripeApiKey);
+  //   //console.log("stripeApiKey", stripeApiKey);
+  // }
 
   useEffect(() => {
     store.dispatch(isAuth());

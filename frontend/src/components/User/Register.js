@@ -168,7 +168,7 @@ const Register = () => {
                 />
                 {avatarPreviewFromLink && <img
                   className="register-avatar-from-link"
-                  src={avatarPreviewFromLink}
+                  src={avatarPreviewFromLink} alt="avatar preview"
                 />}
               </div>
               <button

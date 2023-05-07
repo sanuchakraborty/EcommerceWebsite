@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import "./AllProducts.css";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -41,7 +41,7 @@ const AllReviewsOfProduct = () => {
     }
 
     dispatch(getAllReviews(productId));
-  }, [dispatch, error, deleteError, isDeleted, navigate]);
+  }, [dispatch, error, deleteError, isDeleted, navigate, productId]);
 
   const columns = [
     { field: "id", headerName: "Review ID", minWidth: 200, flex: 0.5 },

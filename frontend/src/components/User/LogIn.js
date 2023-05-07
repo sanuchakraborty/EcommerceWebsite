@@ -31,7 +31,7 @@ const Login = () => {
     if (isAuthenticated) {
       navigate(redirect);
     }
-  }, [dispatch, error, user, loading, navigate, isAuthenticated]);
+  }, [dispatch, error, user, loading, navigate, isAuthenticated,redirect]);
 
   return (
     <Fragment>

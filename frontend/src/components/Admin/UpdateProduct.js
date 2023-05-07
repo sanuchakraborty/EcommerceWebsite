@@ -34,9 +34,6 @@ const UpdateProduct = () => {
   const [images, setImages] = useState([]);
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
-  const [imageLink1, setImageLink1] = useState("");
-  const [imageLink2, setImageLink2] = useState("");
-  const [imageLink3, setImageLink3] = useState("");
 
   const categories = [
     "Laptop",

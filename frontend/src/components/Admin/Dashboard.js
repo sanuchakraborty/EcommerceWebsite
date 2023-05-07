@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import Sidebar from "./Sidebar.js";
+// import Sidebar from "./Sidebar.js";
 import "./Dashboard.css";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { Doughnut, Line } from "react-chartjs-2";
+// import { Doughnut, Line } from "react-chartjs-2";
 import { useSelector, useDispatch } from "react-redux";
 import { getAdminProducts } from "../../actions/productAction.js";
 import { getAllOrders } from "../../actions/orderAction.js";
@@ -17,13 +17,13 @@ const AdminDashboard = () => {
   const { orders, totalOrderPrice } = useSelector((state) => state.allOrders);
   const { users } = useSelector((state) => state.allUsers);
   const totalAmount = Math.floor(totalOrderPrice); 
-  let outOfStock = 0;
-  products &&
-    products.forEach((item) => {
-      if (item.Stock === 0) {
-        outOfStock += 1;
-      }
-    });
+  // let outOfStock = 0;
+  // products &&
+  //   products.forEach((item) => {
+  //     if (item.Stock === 0) {
+  //       outOfStock += 1;
+  //     }
+  //   });
 
   useEffect(() => {
     dispatch(getAdminProducts());
@@ -31,28 +31,28 @@ const AdminDashboard = () => {
     dispatch(getAllUsers());
   }, [dispatch]);
 
-  const lineState = {
-    labels: ["Initial Amount", "Amount Earned"],
-    datasets: [
-      {
-        label: "TOTAL AMOUNT",
-        backgroundColor: ["tomato"],
-        hoverBackgroundColor: ["rgb(197, 72, 49)"],
-        data: [0, 20000],
-      },
-    ],
-  };
+  // const lineState = {
+  //   labels: ["Initial Amount", "Amount Earned"],
+  //   datasets: [
+  //     {
+  //       label: "TOTAL AMOUNT",
+  //       backgroundColor: ["tomato"],
+  //       hoverBackgroundColor: ["rgb(197, 72, 49)"],
+  //       data: [0, 20000],
+  //     },
+  //   ],
+  // };
 
-  const doughnutState = {
-    labels: ["Out of Stock", "InStock"],
-    datasets: [
-      {
-        backgroundColor: ["#00A6B4", "#6800B4"],
-        hoverBackgroundColor: ["#4B5000", "#35014F"],
-        data: [outOfStock, products.length - outOfStock],
-      },
-    ],
-  };
+  // const doughnutState = {
+  //   labels: ["Out of Stock", "InStock"],
+  //   datasets: [
+  //     {
+  //       backgroundColor: ["#00A6B4", "#6800B4"],
+  //       hoverBackgroundColor: ["#4B5000", "#35014F"],
+  //       data: [outOfStock, products.length - outOfStock],
+  //     },
+  //   ],
+  // };
   return (
     <div className="dashboard">
       <MetaData title="Dashboard - Admin Panel" />
