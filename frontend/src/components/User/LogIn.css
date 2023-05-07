@@ -1,0 +1,66 @@
+.login-page{
+margin-top: 1%;
+text-align: center;
+color: #277582;
+padding: 20px;
+}
+.login{
+    width: 400px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    background: #23463f;
+    border-radius: 2vmax ;
+    padding: 2vmax;
+}
+#login{
+    border: none;
+    display: block;
+    
+}
+input[type=email]{
+    padding: 5% 20%;
+    border: 5px;
+    border-radius: 1vmax;
+    border-color: #b56ba5;
+    margin-left:10%;
+    margin-right: 10% ;
+    margin-bottom: 1vmax;
+    position: relative;
+}
+input[type=password]{
+    padding: 5% 20%;
+    border: 5px;
+    border-radius: 1vmax;
+    border-color: #b56ba5;
+    margin-left:10%;
+    margin-right: 10% ;
+    margin-bottom: 2%;
+}
+.forgotPass{
+    font-size: small;
+    margin-bottom: 2% ;
+    text-align: start;
+    margin-left:15%;
+    color: white;
+}
+.register-text{
+    color: white;
+    font-size: small;
+    margin-left: 12%;
+    margin-top: 5% ;
+}
+.register-link{
+    margin-left: 2%;
+}
+.login-button{
+    padding: 5% 7%;
+    border: 5px;
+    border-radius: 2vmax;
+    border-color: #b56ba5;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+

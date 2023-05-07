@@ -1,0 +1,165 @@
+.productsHeading {
+    margin: 2vmax auto;
+    width: 15vw;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.171); */
+    padding: 2vmax;
+    color: rgba(0, 0, 0, 0.678);
+    font: 500 1.5vmax ;
+    text-align: center;
+    padding-left: 10%;
+  }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 30vh;
+    padding-left:10%;
+  }
+  
+  .paginationBox {
+    display: flex;
+    justify-content: center;
+    margin: 6vmax;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .page-item {
+    background-color: rgb(255, 255, 255);
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    padding: 1vmax 1.5vmax;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .page-item:first-child {
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .page-item:last-child {
+    border-radius: 0 5px 5px 0;
+  }
+  .page-link {
+    text-decoration: none;
+    font: 300 0.7vmax ;
+    color: rgb(80, 80, 80);
+    transition: all 0.3s;
+  }
+  
+  .page-item:hover {
+    background-color: rgb(230, 230, 230);
+  }
+  
+  .page-item:hover .page-link {
+    color: rgb(0, 0, 0);
+  }
+  
+  .pageItemActive {
+    background-color: tomato;
+  }
+  
+  .pageLinkActive {
+    color: white;
+  }
+  
+  .filterBox {
+    width: 10vmax;
+    position: absolute;
+    top: 7vmax;
+    left: 1.5vmax;
+  }
+  .filterBox-mobile{
+    display: none;
+  }
+  
+  .categoryBox {
+    padding: 0%;
+    justify-content: start;
+  }
+  
+  .category-link {
+    
+    color: rgba(0, 0, 0, 0.61);
+    font: 400 1vmax;
+    margin: 0.4vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  .category-link:hover {
+    color: tomato;
+  }
+  
+  .filterBox > fieldset {
+    border: 1px solid rgba(0, 0, 0, 0.329);
+  }
+  .no-products{
+    margin-left: -10%;
+    margin-top: 5%;
+  }
+  
+  @media screen and (max-width: 920px) {
+
+    .productsHeading {
+      margin: 2vmax auto;
+      width: 15vw;
+      
+      padding:1vmax 12vmax 0 0vmax;
+      color: rgba(0, 0, 0, 0.678);
+      font: 500 1.5vmax ;
+      text-align: center;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-height: 30vh;
+      padding-left:0%;
+    }
+    .filterBox-mobile {
+      display: block;
+      width: 80%;
+      position: static;
+      margin: auto;
+    }
+    .filterBox{
+      display: none;
+    }
+    .categoryBox{
+      display: flex;
+      overflow-x:auto;
+      justify-content: space-between;
+      padding: 0.5vmax 0;
+    }
+    .no-products{
+      margin-left:0%;
+      margin-top: 10%;
+    }  
+    .page-link {
+      font: 300 1.7vmax ;
+    }
+    .category-link {
+      font: 400 1.8vmax ;
+      padding:0 2vmax 0 0;
+    }
+    .price-filter{
+      display: flex;
+      justify-content: space-around;
+    }
+    .price-filter > input {
+      padding: 0.5vmax;
+      width: 13vmax;
+    }
+    .price-filter > button {
+      padding: 0.7vmax;
+      width: 10vmax;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(17, 132, 209);
+      color: white;
+    }
+  }

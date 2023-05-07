@@ -1,0 +1,19 @@
+
+    #avatar{
+        border: 5px;
+        border-radius: 2vmax;
+        border-color: #b56ba5;
+    }
+    .imageUpload{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .register-avatar{
+        height: 10%;
+        width: 10%;
+        border:#23463f;
+        border-radius:1.5rem;
+        margin-left: 20%;
+    }
+   

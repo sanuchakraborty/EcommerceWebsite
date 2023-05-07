@@ -1,0 +1,60 @@
+.login-page{
+    margin-top: 1%;
+    text-align: center;
+    color: #277582;
+    padding: 20px;
+    }
+    input[type="name"]{
+        padding: 5% 20%;
+        border: 5px;
+        border-radius: 1vmax;
+        border-color: #b56ba5;
+        margin-left:10%;
+        margin-right: 10% ;
+        margin-bottom: 2%;
+    }
+    #avatar{
+        border: 5px;
+        border-radius: 2vmax;
+        border-color: #b56ba5;
+    }
+    .imageUpload{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .register-avatar{
+        height: 10%;
+        width: 10%;
+        border:#23463f;
+        border-radius:1.5rem;
+        margin-left: 20%;
+    }
+    .register-avatar-from-link{
+        height: 3vmax;
+        width: 3vmax;
+        border-radius: 0.5rem;
+    }
+    .register-text{
+        color: white;
+        font-size: small;
+        margin-left: 12%;
+        margin-top: 5% ;
+    }
+    .register-link{
+        margin-left: 2%;
+    }
+
+    .register-button{
+        padding: 5% 7%;
+        border: 5px;
+        border-radius: 2vmax;
+        border-color: #b56ba5;
+        margin-left:30%;
+        margin-right: 10% ;
+        margin-bottom: 2%;
+        margin-top: 2%;
+        cursor: pointer;
+    }
+    
+    
