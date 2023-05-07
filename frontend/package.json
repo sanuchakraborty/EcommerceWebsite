@@ -59,5 +59,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://192.168.1.101:4000"
+  "proxy": "https://ecommerce-website-uimr.vercel.app"
 }
