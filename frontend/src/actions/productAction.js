@@ -41,7 +41,9 @@ export const getProducts =
   async (dispatch) => {
     try {
       dispatch({ type: ALL_PRODUCT_REQUEST });
-      if (category === "All") {category = "";}
+      if (category === "All") {
+        category = "";
+      }
       let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
       if (category) {
         currentPage = 1;
