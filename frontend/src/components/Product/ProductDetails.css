@@ -211,7 +211,12 @@
       flex-direction: column;
       height: unset;
     }
-  
+    .ProductDetails > div {
+      width:100%;
+    }
+    .ProductDetails > div:first-child {
+      width:100%;
+    }
     .ProductDetails > div:last-child {
       align-items: center;
     }
