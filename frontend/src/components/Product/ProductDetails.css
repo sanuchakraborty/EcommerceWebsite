@@ -17,10 +17,11 @@
     padding: 2vmax;
     box-sizing: border-box;
     border: 1px solid white;
+    width: 50%;
   }
   
   .ProductDetails > div:first-child {
-    width:fit-content;
+    width: 50%;
     height:fit-content;
   }
   .ProductDetails > div:last-child {

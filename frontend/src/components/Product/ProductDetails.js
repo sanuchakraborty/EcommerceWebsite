@@ -15,7 +15,7 @@ import {
 } from "../../actions/productAction";
 import Loader from "../layout/Loader/Loader";
 import MetaData from "../layout/MetaData";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ReviewCard from "../ReviewCard.js";
 import { addItemToCart } from "../../actions/cartAction";
 import {
@@ -41,6 +41,7 @@ const ProductDetails = () => {
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
+  const [goToCart, setGoToCart] = useState(false);
 
   const options = {
     size: "large",
@@ -65,6 +66,7 @@ const ProductDetails = () => {
   const addToCartHandler = () => {
     dispatch(addItemToCart(id, quantity));
     alert(`${product.name} added to cart`);
+    setGoToCart(true);
   };
   const submitReviewToggle = () => {
     open ? setOpen(false) : setOpen(true);
@@ -98,7 +100,7 @@ const ProductDetails = () => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title={`${product.name} -- ECOMMERCE`} />
+          {product.name && <MetaData title={`${product.name} -- ECOMMERCE`} />}
           <div className="ProductDetails">
             <div>
               <Carousel showArrows={true}>
@@ -140,8 +142,13 @@ const ProductDetails = () => {
                     </form>
                     <button onClick={increaseQuantity}>+</button>
                   </div>
-                  {product.stock > 0 ? (
+                  {product.stock > 0 && goToCart===false ? (
                     <button onClick={addToCartHandler}>Add to Cart</button>
+                  ) : (
+                    <></>
+                  )}
+                  {product.stock > 0 && goToCart===true ? (
+                    <button><Link to="/cart">Go to Cart</Link></button>
                   ) : (
                     <></>
                   )}
