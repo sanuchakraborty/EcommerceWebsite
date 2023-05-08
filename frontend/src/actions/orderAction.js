@@ -105,7 +105,7 @@ export const updateOrder = (id, order) => async (dispatch) => {
     const config = { headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.put(
-      `https://ecommerce-website-uimr.vercel.app/api/v1/admin/order/${id}`,
+      `/api/v1/admin/order/${id}`,
       order,
       config
     );
