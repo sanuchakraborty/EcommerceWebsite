@@ -44,10 +44,10 @@ export const getProducts =
       if (category === "All") {
         category = "";
       }
-      let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
+      let link = `https://ecommerce-website-uimr.vercel.app/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
       if (category) {
         currentPage = 1;
-        link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
+        link = `https://ecommerce-website-uimr.vercel.app/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
       }
       const { data } = await axios.get(link);
       dispatch({
@@ -65,7 +65,7 @@ export const getProducts =
 export const getAdminProducts = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
-    const { data } = await axios.get(`/api/v1/admin/products`);
+    const { data } = await axios.get(`https://ecommerce-website-uimr.vercel.app/api/v1/admin/products`);
     dispatch({
       type: ADMIN_PRODUCT_SUCCESS,
       payload: data,
@@ -81,7 +81,7 @@ export const getAdminProducts = () => async (dispatch) => {
 export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_Details_REQUEST });
-    const { data } = await axios.get(`/api/v1/product/${id}`);
+    const { data } = await axios.get(`https://ecommerce-website-uimr.vercel.app/api/v1/product/${id}`);
     dispatch({
       type: PRODUCT_Details_SUCCESS,
       payload: data.product,
@@ -103,7 +103,7 @@ export const createNewProduct = (productData) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `/api/v1/admin/product/new`,
+      `https://ecommerce-website-uimr.vercel.app/api/v1/admin/product/new`,
       productData,
       config
     );
@@ -123,7 +123,7 @@ export const createNewProduct = (productData) => async (dispatch) => {
 export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
-    const { data } = await axios.delete(`/api/v1/admin/product/${id}`);
+    const { data } = await axios.delete(`https://ecommerce-website-uimr.vercel.app/api/v1/admin/product/${id}`);
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
       payload: data.success,
@@ -143,7 +143,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     const { data } = await axios.put(
-      `/api/v1/admin/product/${id}`,
+      `https://ecommerce-website-uimr.vercel.app/api/v1/admin/product/${id}`,
       productData,
       config
     );
@@ -167,7 +167,7 @@ export const addNewReview =
       };
 
       const { data } = await axios.put(
-        `/api/v1/review`,
+        `https://ecommerce-website-uimr.vercel.app/api/v1/review`,
         { rating, comment, productId },
         config
       );
@@ -187,7 +187,7 @@ export const deleteReview = (id, productId) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_REVIEW_REQUEST });
     const { data } = await axios.delete(
-      `/api/v1/reviews?id=${id}&productId=${productId}`
+      `https://ecommerce-website-uimr.vercel.app/api/v1/reviews?id=${id}&productId=${productId}`
     );
     dispatch({
       type: DELETE_REVIEW_SUCCESS,
@@ -203,7 +203,7 @@ export const deleteReview = (id, productId) => async (dispatch) => {
 export const getAllReviews = (id) => async (dispatch) => {
   try {
     dispatch({ type: ALL_REVIEWS_REQUEST });
-    const { data } = await axios.get(`/api/v1/reviews?id=${id}`);
+    const { data } = await axios.get(`https://ecommerce-website-uimr.vercel.app/api/v1/reviews?id=${id}`);
     dispatch({
       type: ALL_REVIEWS_SUCCESS,
       payload: data.reviews,
