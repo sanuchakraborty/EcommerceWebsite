@@ -93,6 +93,14 @@
   .category-link:hover {
     color: tomato;
   }
+  .category-link-active {
+    
+    color: tomato;
+    font: 400 1vmax;
+    margin: 0.4vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
   
   .filterBox > fieldset {
     border: 1px solid rgba(0, 0, 0, 0.329);

@@ -15,7 +15,7 @@ import {
 } from "../../actions/productAction";
 import Loader from "../layout/Loader/Loader";
 import MetaData from "../layout/MetaData";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import ReviewCard from "../ReviewCard.js";
 import { addItemToCart } from "../../actions/cartAction";
 import {
@@ -27,9 +27,12 @@ import {
 } from "@mui/material";
 import { Rating } from "@mui/material";
 import { NEW_REVIEW_RESET } from "../../constants/productConstant";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
@@ -40,8 +43,10 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState(0);
+  const [index, setIndex] = useState(0);
   const [comment, setComment] = useState("");
   const [goToCart, setGoToCart] = useState(false);
+  const [zoomImage, setZoomImage] = useState(false);
 
   const options = {
     size: "large",
@@ -77,6 +82,9 @@ const ProductDetails = () => {
     setOpen(false);
   };
 
+  // let imageLinks =[];
+  // {product.images &&
+  //   product.images.map((item, i) => (imageLinks.push(item.url)))}
   useEffect(() => {
     if (error) {
       alert(error);
@@ -103,7 +111,7 @@ const ProductDetails = () => {
           {product.name && <MetaData title={`${product.name} -- ECOMMERCE`} />}
           <div className="ProductDetails">
             <div>
-              <Carousel showArrows={true}>
+              {/* <Carousel showArrows={true}>
                 {product.images &&
                   product.images.map((item, i) => (
                     <img
@@ -111,9 +119,44 @@ const ProductDetails = () => {
                       key={i}
                       src={item.url}
                       alt={`${i} Slide`}
+                      onClick={()=> navigate("/products")}
                     />
                   ))}
-              </Carousel>
+              </Carousel> */}
+              <div className="main-image">
+                <ArrowBackIosIcon
+                  className="change-icon"
+                  onClick={() => {
+                    if (product.images && index === 0) {
+                      setIndex(product.images.length - 1);
+                    } else setIndex(index - 1);
+                  }}
+                />
+                <img
+                  src={product.images && product.images[index].url}
+                  alt="product"
+                />
+                <ArrowForwardIosIcon
+                  className="change-icon"
+                  onClick={() => {
+                    if (product.images && index === product.images.length - 1) {
+                      setIndex(0);
+                    } else setIndex(index + 1);
+                  }}
+                />
+              </div>
+              <div className="all-images-of-a-product">
+                {product.images &&
+                  product.images.map((item, i) => (
+                    <img
+                      className="CarouselImage"
+                      key={i}
+                      src={item.url}
+                      alt={`${i} Slide`}
+                      onClick={() => setIndex(i)}
+                    />
+                  ))}
+              </div>
             </div>
             <div>
               <div className="detailsBlock-1">
@@ -142,13 +185,15 @@ const ProductDetails = () => {
                     </form>
                     <button onClick={increaseQuantity}>+</button>
                   </div>
-                  {product.stock > 0 && goToCart===false ? (
+                  {product.stock > 0 && goToCart === false ? (
                     <button onClick={addToCartHandler}>Add to Cart</button>
                   ) : (
                     <></>
                   )}
-                  {product.stock > 0 && goToCart===true ? (
-                    <button><Link to="/cart">Go to Cart</Link></button>
+                  {product.stock > 0 && goToCart === true ? (
+                    <button>
+                      <Link to="/cart">Go to Cart</Link>
+                    </button>
                   ) : (
                     <></>
                   )}
